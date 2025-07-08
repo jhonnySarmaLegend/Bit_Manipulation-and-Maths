@@ -33,7 +33,12 @@
         return V;
     }
 
+/*
+   x=10(dec) = 1010(bin) ,  -x = 10-->invert binary of 10 +1 = 0101 +1 = 0110
+  -x=-10=0110  , x & -x = 0010  --> right most set bit
 
+  since in xor operation --> 1^0=1 , hence we can segregate in two groups
+*/
 //Find the two numbers appearing odd number of times
 // or  Repeating and missing number
     vector<int> findTwoElement(vector<int>& arr) {

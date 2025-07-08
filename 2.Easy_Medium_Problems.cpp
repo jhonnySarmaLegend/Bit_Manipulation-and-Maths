@@ -33,6 +33,27 @@
         return V;
     }
 
+
+//POWER SET variation 2 (strings)
+vector<string> AllPossibleStrings(string s) {
+        // Code here
+        int n=s.size();
+                vector<string>V;
+        for(int i=0;i<=pow(2,n)-1;i++){ // 2^n -1 = total number of subset
+            string a="";
+            for(int j=0;j<s.size();j++){ // element of array traversal
+                if(i&(1<<j)){ // pick non pick
+                   a+=s[j];
+                }
+            }
+            V.push_back(a);
+        }
+        
+        sort(V.begin(),V.end());
+        
+        return V;
+    }
+
 /*
    x=10(dec) = 1010(bin) ,  -x = 10-->invert binary of 10 +1 = 0101 +1 = 0110
   -x=-10=0110  , x & -x = 0010  --> right most set bit

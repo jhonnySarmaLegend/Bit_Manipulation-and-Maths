@@ -105,7 +105,9 @@ double myPow(double x, int n) {
       nn = nn - 1;
     }
   }
-
+  if (n < 0) ans = (double)(1.0) / (double)(ans);
+  return ans;
+}
 
 //COMPUTE XOR of numbers 1 to n
 int computeXOR(int n)
@@ -120,7 +122,5 @@ int computeXOR(int n)
         return 0;
 }
     
-  if (n < 0) ans = (double)(1.0) / (double)(ans);
-  return ans;
-}
+
 

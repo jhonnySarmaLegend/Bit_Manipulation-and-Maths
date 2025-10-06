@@ -43,7 +43,44 @@ return result;
         }
         return V;
     }
+/*
+Let’s dry run the code for nums = [1, 2, 3]. Here, n = 3, so there are 2^3 = 8 subsets.
 
+Outer Loop (i)	Binary (i)	Inner Loop (j)	Bitmask Check (i & (1 << j))	Subset (a)
+
+0	000	0	000 & 001 → 0	[]
+		1	000 & 010 → 0	[]
+		2	000 & 100 → 0	[]
+		Result		[]
+1	001	0	001 & 001 → 1	[1]
+		1	001 & 010 → 0	[1]
+		2	001 & 100 → 0	[1]
+		Result		[1]
+2	010	0	010 & 001 → 0	[]
+		1	010 & 010 → 1	[2]
+		2	010 & 100 → 0	[2]
+		Result		[2]
+3	011	0	011 & 001 → 1	[1]
+		1	011 & 010 → 1	[1, 2]
+		2	011 & 100 → 0	[1, 2]
+		Result		[1, 2]
+4	100	0	100 & 001 → 0	[]
+		1	100 & 010 → 0	[]
+		2	100 & 100 → 1	[3]
+		Result		[3]
+5	101	0	101 & 001 → 1	[1]
+		1	101 & 010 → 0	[1]
+		2	101 & 100 → 1	[1, 3]
+		Result		[1, 3]
+6	110	0	110 & 001 → 0	[]
+		1	110 & 010 → 1	[2]
+		2	110 & 100 → 1	[2, 3]
+		Result		[2, 3]
+7	111	0	111 & 001 → 1	[1]
+		1	111 & 010 → 1	[1, 2]
+		2	111 & 100 → 1	[1, 2, 3]
+		Result		[1, 2, 3]
+*/
 
 //POWER SET variation 2 (strings)
 vector<string> AllPossibleStrings(string s) {
